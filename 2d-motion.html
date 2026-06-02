@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2D Particle Motion Demonstration</title>
+    <link rel="stylesheet" href="2d-motion.css">
+</head>
+<body>
+
+    <div class="nav-header">
+        <a href="index.html" class="nav-btn">← All Simulations</a>
+    </div>
+
+    <h1>2D Particle Motion Simulator</h1>
+    <p>Adjust the parameters and click "Launch" to see projectile motion in action.</p>
+
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="velocity">Initial Velocity ($v_0$):</label>
+                <input type="range" id="velocity" min="10" max="100" value="60">
+                <div class="value-display" id="v-val">60 m/s</div>
+            </div>
+
+            <div class="control-group">
+                <label for="angle">Launch Angle ($\theta$):</label>
+                <input type="range" id="angle" min="0" max="90" value="45">
+                <div class="value-display" id="angle-val">45°</div>
+            </div>
+
+            <div class="control-group">
+                <label for="gravity">Gravity ($g$):</label>
+                <input type="range" id="gravity" min="0" max="25" step="0.1" value="9.8">
+                <div class="value-display" id="g-val">9.8 m/s²</div>
+            </div>
+
+            <div class="control-group">
+                <label for="mass">Mass ($m$):</label>
+                <input type="range" id="mass" min="0.1" max="10" step="0.1" value="1.0">
+                <div class="value-display" id="mass-val">1.0 kg</div>
+            </div>
+
+            <div class="button-group">
+                <button id="launchBtn">Launch</button>
+                <button id="resetBtn" class="secondary-btn">Reset</button>
+            </div>
+        </div>
+
+        <div class="sim-space">
+            <canvas id="simCanvas" width="700" height="400"></canvas>
+            
+            <div class="metrics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">Max Height ($y_{\max}$):</span>
+                    <span id="maxHeightVal" class="metric-num">0.00 m</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Total Distance ($R$):</span>
+                    <span id="distanceVal" class="metric-num">0.00 m</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="2d-motion.js"></script>
+</body>
+</html>
