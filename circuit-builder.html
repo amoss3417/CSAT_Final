@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physics Sim Lab: Circuit Builder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="circuit-builder.css">
+</head>
+<body>
+    <header class="app-header">
+        <a class="menu-link" href="index.html">All simulations</a>
+        <h1>Electricity: Circuit Builder</h1>
+        <p>Build a simple series circuit with resistors, a battery, and a capacitor.</p>
+    </header>
+
+    <main class="app-shell">
+        <section class="visuals-panel">
+            <div class="panel">
+                <h2>Circuit Diagram</h2>
+                <canvas id="circuitCanvas" width="620" height="260"></canvas>
+            </div>
+        </section>
+
+        <section class="controls-panel">
+            <div class="panel">
+                <h2>Components</h2>
+                <p class="muted">Series circuit only. Add a battery, resistors, and an optional capacitor.</p>
+                <div class="button-row">
+                    <button id="addBattery" class="btn primary">Add Battery</button>
+                    <button id="addResistor" class="btn secondary">Add Resistor</button>
+                    <button id="addCapacitor" class="btn secondary">Add Capacitor</button>
+                </div>
+                <div id="componentList" class="component-list"></div>
+            </div>
+
+            <div class="panel">
+                <h2>Simulation</h2>
+                <div class="button-row">
+                    <button id="playPauseBtn" class="btn primary">Play</button>
+                    <button id="resetBtn" class="btn secondary">Reset</button>
+                    <button id="toggleSwitchBtn" class="btn secondary">Close Circuit</button>
+                </div>
+                <div class="readout">
+                    <div class="readout-row"><span>Battery (V)</span><strong id="readoutV">-</strong></div>
+                    <div class="readout-row"><span>Total R (ohm)</span><strong id="readoutR">-</strong></div>
+                    <div class="readout-row"><span>Current (A)</span><strong id="readoutI">-</strong></div>
+                    <div class="readout-row"><span>Cap Voltage (V)</span><strong id="readoutVc">-</strong></div>
+                    <div class="readout-row"><span>Tau (s)</span><strong id="readoutTau">-</strong></div>
+                </div>
+                <p id="statusText" class="status">Add a battery and at least one resistor.</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="circuit-builder.js"></script>
+</body>
+</html>
