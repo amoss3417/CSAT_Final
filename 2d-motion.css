@@ -1,0 +1,169 @@
+:root {
+    --primary: #2563eb;
+    --secondary: #64748b;
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --accent: #0ea5e9;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+    margin: 0;
+    padding: 10px 20px 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Navigation Header Styles */
+.nav-header {
+    width: 100%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+}
+
+.nav-btn {
+    background-color: var(--surface);
+    color: var(--text);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #f1f5f9;
+    border-color: #cbd5e1;
+}
+
+h1 {
+    margin-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1100px;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.controls {
+    background: var(--surface);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.control-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+label {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+input[type="range"] {
+    width: 100%;
+}
+
+.value-display {
+    font-size: 0.85rem;
+    color: #64748b;
+    text-align: right;
+}
+
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+button {
+    flex: 1;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #1d4ed8;
+}
+
+button.secondary-btn {
+    background-color: var(--secondary);
+}
+
+button.secondary-btn:hover {
+    background-color: #475569;
+}
+
+.sim-space {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    flex: 2;
+}
+
+canvas {
+    background: #0f172a;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+}
+
+.metrics-panel {
+    display: flex;
+    width: 100%;
+    gap: 15px;
+}
+
+.metric-box {
+    flex: 1;
+    background: var(--surface);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    border-left: 4px solid var(--accent);
+}
+
+.metric-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.metric-num {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text);
+}
