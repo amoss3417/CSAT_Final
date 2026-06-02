@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AP Physics 1: The Inclined Plane</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@600;700&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="inclined-plane.css">
+</head>
+<body>
+    <header class="app-header panel-animate delay-1">
+        <a class="menu-link" href="index.html">All simulations</a>
+        <h1>Dynamics: The Inclined Plane</h1>
+        <p>Explore Newton's Laws, friction, and vector components.</p>
+    </header>
+
+    <main class="app-container">
+        <section class="visuals-panel">
+            <div class="canvas-container panel-animate delay-1">
+                <canvas id="simCanvas" width="600" height="400"></canvas>
+            </div>
+            
+            <div class="bottom-visuals">
+                <div class="fbd-container panel-animate delay-2">
+                    <h3>Free-Body Diagram</h3>
+                    <canvas id="fbdCanvas" width="200" height="200"></canvas>
+                </div>
+                <div class="graph-container panel-animate delay-3">
+                    <div class="graph-header">
+                        <h3>Live Graph</h3>
+                        <select id="graphSelect">
+                            <option value="position">Position vs. Time</option>
+                            <option value="velocity">Velocity vs. Time</option>
+                            <option value="acceleration">Acceleration vs. Time</option>
+                        </select>
+                    </div>
+                    <canvas id="graphCanvas" width="380" height="160"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls-panel panel-animate delay-2">
+            <div class="control-group">
+                <h3>Parameters</h3>
+                
+                <div class="slider-container">
+                    <label for="angle">
+                        <span class="label-text">Ramp Angle (&theta;):</span>
+                        <span id="angleVal" class="label-value">30</span>
+                    </label>
+                    <input type="range" id="angle" min="0" max="90" step="1" value="30">
+                </div>
+
+                <div class="slider-container">
+                    <label for="mass">
+                        <span class="label-text">Mass (m):</span>
+                        <span id="massVal" class="label-value">10.0</span>
+                    </label>
+                    <input type="range" id="mass" min="1" max="20" step="0.1" value="10">
+                </div>
+
+                <div class="slider-container">
+                    <label for="mus">
+                        <span class="label-text">Static Friction (&mu;<sub>s</sub>):</span>
+                        <span id="musVal" class="label-value">0.40</span>
+                    </label>
+                    <input type="range" id="mus" min="0" max="1" step="0.01" value="0.4">
+                </div>
+
+                <div class="slider-container">
+                    <label for="muk">
+                        <span class="label-text">Kinetic Friction (&mu;<sub>k</sub>):</span>
+                        <span id="mukVal" class="label-value">0.25</span>
+                    </label>
+                    <input type="range" id="muk" min="0" max="1" step="0.01" value="0.25">
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button id="playPauseBtn" class="btn primary">Play</button>
+                <button id="resetBtn" class="btn secondary">Reset</button>
+            </div>
+
+            <div class="data-readout">
+                <h3>Real-Time Data</h3>
+                <table class="data-table">
+                    <tr><th>Time (t)</th><td id="data-t">0.00 s</td></tr>
+                    <tr><th>Position (x)</th><td id="data-x">0.00 m</td></tr>
+                    <tr><th>Velocity (v)</th><td id="data-v">0.00 m/s</td></tr>
+                    <tr><th>Acceleration (a)</th><td id="data-a">0.00 m/s&sup2;</td></tr>
+                    <tr><th>Normal Force (F<sub>N</sub>)</th><td id="data-fn">0.00 N</td></tr>
+                    <tr><th>Friction (F<sub>f</sub>)</th><td id="data-ff">0.00 N</td></tr>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="inclined-plane.js"></script>
+</body>
+</html>
