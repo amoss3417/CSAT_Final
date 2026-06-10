@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pendulum Motion Simulator</title>
+    <link rel="stylesheet" href="pendulum.css">
+</head>
+<body>
+
+    <div class="nav-header">
+        <a href="index.html" class="nav-btn">← All Simulations</a>
+    </div>
+
+    <h1>Pendulum Motion Simulator</h1>
+    <p>Configure the pendulum variables and click "Release" to observe periodic oscillation.</p>
+
+    <div class="container">
+        <div class="controls">
+            <div class="control-group">
+                <label for="length">String Length (L):</label>
+                <input type="range" id="length" min="50" max="250" value="180">
+                <div class="value-display" id="length-val">1.80 m</div>
+            </div>
+
+            <div class="control-group">
+                <label for="mass">Bob Mass (m):</label>
+                <input type="range" id="mass" min="0.5" max="10" step="0.1" value="2.0">
+                <div class="value-display" id="mass-val">2.0 kg</div>
+            </div>
+
+            <div class="control-group">
+                <label for="angle">Starting Angle (theta):</label>
+                <input type="range" id="angle" min="-90" max="90" value="45">
+                <div class="value-display" id="angle-val">45°</div>
+            </div>
+
+            <div class="control-group checkbox-group">
+                <input type="checkbox" id="dragToggle">
+                <label for="dragToggle">Enable Air Resistance</label>
+            </div>
+
+            <div class="button-group">
+                <button id="launchBtn">Release</button>
+                <button id="pauseBtn" class="secondary-btn" style="display: none;">Pause</button>
+                <button id="resetBtn" class="secondary-btn">Reset</button>
+            </div>
+        </div>
+
+        <div class="sim-space">
+            <canvas id="simCanvas" width="700" height="400"></canvas>
+            
+            <div class="metrics-panel">
+                <div class="metric-box">
+                    <span class="metric-label">Current Angle (theta):</span>
+                    <span id="currentAngleVal" class="metric-num">0.0°</span>
+                </div>
+                <div class="metric-box">
+                    <span class="metric-label">Angular Velocity (omega):</span>
+                    <span id="angVelVal" class="metric-num">0.00 rad/s</span>
+                </div>
+            </div>
+
+            <div class="graph-container">
+                <div class="graph-controls">
+                    <label for="graphType">Select Telemetry Plot:</label>
+                    <select id="graphType">
+                        <option value="displacement">Angular Displacement vs. Time (theta vs. t)</option>
+                        <option value="velocity">Angular Velocity vs. Time (omega vs. t)</option>
+                        <option value="acceleration">Angular Acceleration vs. Time (alpha vs. t)</option>
+                    </select>
+                </div>
+                <canvas id="graphCanvas" width="700" height="180"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="pendulum.js"></script>
+</body>
+</html>
